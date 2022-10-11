@@ -1,0 +1,98 @@
+/* COMMON */
+
+
+  /* auto complete */
+  #list{ max-height: 100px;
+    overflow-y: auto; background-color: #eee;}
+    #list ul{  cursor: pointer;  }
+    #list li{color: black; font: 12pt; padding: 1px 8px; margin: 2px;}
+    #list li:hover{ color: white;  background-color: #b3b3ff;}
+    .card{  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.12);  }
+  @media (max-width: 1024px) {
+     
+   
+  
+}
+
+/* COMMON */
+.desctop-view{
+    display: revert;
+}
+
+.mobile-view {
+    display: none;
+}
+
+.form_label{
+    font-weight: 600;
+}
+
+.group-form{
+    margin:0px -5px 0px -10px;
+}
+
+.group-form-btn{
+    margin:30px -10px 0px -10px;
+}
+
+
+@media (max-width: 700px) {
+    .mobile-view {
+        display:revert;
+    }
+    .desctop-view{
+        display: none;
+    }
+
+    .group-form{
+        margin:0px 0px 0px 0px;
+    }
+
+    .group-form-btn{
+        margin:10px 0px 10px 0px;
+    }
+    #list li{ border: 1px #b3b3ff; color: black; font: 12pt; padding: 5px 8px;}
+}
+
+
+@media (max-width: 500px){
+    .mobile-none{
+        display: none;
+    }
+}
+table.dataTable.cell-border thead th {
+    border: 1px solid black;
+}
+
+
+table.dataTable.cell-border tbody td {
+border: 1px solid black;
+
+}
+table.dataTable.cell-border tbody tr td:first-child {
+border-left: 1px solid black;
+}
+
+table.dataTable.no-footer {
+border-bottom: 1px solid white;
+}
+
+
+table.dataTable.cell-border tbody tr td:first-child {
+    border-left: 1px solid black;
+}
+
+
+.form-controls {
+    
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.container{
+    margin-top:30px;
+}
