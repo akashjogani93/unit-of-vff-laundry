@@ -118,7 +118,7 @@ h4{
                 <a href="online_newOrder.php"  id="valid">New Order</a>
                 </li>
                 <li>
-                <a href="online_orderAsigned.php"  id="valid">Asigned Order</a>
+                <a href="online_orderAsigned.php"  id="valid">Ready To Pickup</a>
                 </li>
                 <li>
                 <a href="online_orderPickuped.php"  id="valid">Pickuped Order</a>
@@ -137,10 +137,10 @@ h4{
                   <a href="uderprocess.php"  id="valid">Underprocess</a>
                 </li>
                 <li>
-                  <a href="readytoDelivery.php"  id="valid">Asign Order</a>
+                  <a href="readytoDelivery.php"  id="valid">Ready To Deliver</a>
                 </li>
                 <li>
-                  <a href="asigned.php"  id="valid">On The Way</a>
+                  <a href="asigned.php"  id="valid">Asigned Orders</a>
                 </li>
                 <li>
                   <a href="byWalking.php"  id="valid">By Walking</a>

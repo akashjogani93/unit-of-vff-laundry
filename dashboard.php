@@ -35,7 +35,7 @@ function get_Dash_Data($conn,$query){
             <div class="col-lg-4">
                 
                 <div class="card" style="width: 18rem; background-color:rgb(216, 217, 207)">
-                    <a href="" style="text-Decoration:none;">
+                    <a href="online_newOrder.php" style="text-Decoration:none;">
                     <img src="assets/image/105267335-wicker-basket-with-clothes-on-ironing-board-at-dry-cleaner-s.webp" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
                         <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Online' AND `status`= '10' ;"); ?></b><p class="card-text"><b>Online Order Requests</b></p>
@@ -45,7 +45,7 @@ function get_Dash_Data($conn,$query){
             <div class="col-lg-4">
                 
                 <div class="card" style="width: 18rem; ">
-                    <a href="" style="text-Decoration:none;">
+                    <a href="new_order.php" style="text-Decoration:none;">
                     <img src="assets/image/counter1.jpg" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
                         <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Counter' AND `status`= '0' ;"); ?></b><p class="card-text"><b>Counter New Order</b></p>
@@ -55,7 +55,7 @@ function get_Dash_Data($conn,$query){
             <div class="col-lg-4">
                 
                 <div class="card" style="width: 18rem; background-color:rgb(216, 217, 207)">
-                    <a href="" style="text-Decoration:none;">
+                    <a href="uderprocess.php" style="text-Decoration:none;">
                     <img src="assets/image/105267335-wicker-basket-with-clothes-on-ironing-board-at-dry-cleaner-s.webp" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
                         <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `status`= '1' ;"); ?></b><p class="card-text"><b>Underprocess Orders</b></p>
@@ -67,7 +67,7 @@ function get_Dash_Data($conn,$query){
             <div class="col-lg-4">
                 
                 <div class="card" style="width: 18rem;">
-                    <a href="" style="text-Decoration:none;">
+                    <a href="asigned.php" style="text-Decoration:none;">
                     <img src="assets/image/asign.jpg" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
                         <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE  `status`= '3' ;"); ?></b><p class="card-text"><b>Asigned For Delivery</b></p>
@@ -76,21 +76,21 @@ function get_Dash_Data($conn,$query){
             </div>
             <div class="col-lg-4">
                 
-                <div class="card" style="width: 18rem; background-color:rgb(252, 206, 170);">
-                    <a href="" style="text-Decoration:none;">
+                <div class="card" style="width: 18rem; background-color:rgb(216, 217, 207);">
+                    <a href="complited_orders.php" style="text-Decoration:none;">
                     <img src="assets/image/asign1.jpg" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
-                        <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Online' AND `status`= '4' ;"); ?></b><p class="card-text"><b>Online Order Complited</b></p>
+                        <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Online' AND `status`= '4' ;"); ?></b><p class="card-text"><b>Online Order Completed</b></p>
                     </div></a>
                 </div>
             </div>
             <div class="col-lg-4">
                 
                 <div class="card" style="width: 18rem;">
-                    <a href="" style="text-Decoration:none;">
+                    <a href="complited_orders.php" style="text-Decoration:none;">
                     <img src="assets/image/last.png" class="card-img-top" height="100px" alt="...">
                     <div class="card-body">
-                        <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Counter' AND `status`= '4' ;"); ?></b><p class="card-text"><b>Counter Order Complited</b></p>
+                        <b style="font-size:32px; color:black;"><?php echo get_Dash_Data($conn,"SELECT  COUNT(`CoId`) FROM `couterorder` WHERE `orderType`='Counter' AND `status`= '4' ;"); ?></b><p class="card-text"><b>Counter Order Completed</b></p>
                     </div></a>
                 </div>
             </div>

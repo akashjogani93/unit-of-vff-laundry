@@ -14,7 +14,7 @@ if(isset($_POST['request']))
 
         foreach ($newOrderIds as $orderId) 
         {
-            $q="INSERT INTO `order_asign`(`did`,`coId`,`bid`,`date`)VALUES('$delivey','$orderId','$bid','$date')";
+            $q="INSERT INTO `order_asign`(`did`,`coId`,`bid`,`date`,`status`)VALUES('$delivey','$orderId','$bid','$date','Delivery')";
             $conf=mysqli_query($conn,$q);
             if($conf)
             {
@@ -55,7 +55,7 @@ if(isset($_POST['request1']))
 
         foreach ($newOrderIds1 as $orderId1) 
         {
-            $q="INSERT INTO `order_asign`(`did`,`coId`,`bid`,`date`)VALUES('$delivey1','$orderId1','$bid1','$date1')";
+            $q="INSERT INTO `order_asign`(`did`,`coId`,`bid`,`date`,`status`)VALUES('$delivey1','$orderId1','$bid1','$date1','Pickup')";
             $conf=mysqli_query($conn,$q);
             if($conf)
             {

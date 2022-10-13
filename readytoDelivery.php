@@ -13,7 +13,7 @@ $bid="";
 <div class="page-content container-fluid">
     <div class="footer">
         <div class="d-flex justify-content-center">
-             <h2 class="" style=" font-weight: 600">Counter Customer List</h2>
+             <h2 class="" style=" font-weight: 600">Ready To Deliver</h2>
         </div>
         <hr style="margin: 0px;">
     </div>
@@ -64,6 +64,8 @@ $bid="";
 <div id="show">
     <center><button type="button" class=" btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Asign Order</button></center>
 </div>
+<a href="asigned.php" style="float:right" class="btn btn-sm btn-danger">Asigned</a></br></br>
+
 
 <script>
     document.getElementById("show").style.display= "none";
@@ -118,8 +120,7 @@ $bid="";
                             <?php
                         }
 
-                        
-                        $qry="SELECT DISTINCT `couterorder`.`coId`,`couterorder`.`deleveryType`,`customer`.`full`,`customer`.`mobile`,`couterorder`.`status`,`branch`.`bid` FROM `couterorder`,`customer`,`branch` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '2' AND `couterorder`.`deleveryType` = 'Delivery Boy' AND `couterorder`.`bid` = '$bid' ORDER BY `coId` ASC";
+                        $qry="SELECT DISTINCT `couterorder`.`coId`,`couterorder`.`deleveryType`,`customer`.`full`,`customer`.`mobile`,`couterorder`.`status` FROM `couterorder`,`customer` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '2' AND `couterorder`.`deleveryType` = 'Delivery Boy' AND `couterorder`.`bid` = '$bid' ORDER BY `coId` ASC";
                         $confirm=mysqli_query($conn,$qry);
                         while($out=mysqli_fetch_array($confirm))
                         {
@@ -135,7 +136,7 @@ $bid="";
                             <td><?php echo $out['full']; ?></td>
                             <td><?php echo $out['mobile']; ?></td>
                             <td><?php echo $status; ?></td>
-                        <td class="text-center"><a href="receipt_order.php?view=<?php echo $out['coId'];?>" class="btn btn-sm btn-danger">view</a> 
+                        <td class="text-center"><a href="receipt_order.php?view=<?php echo $out['coId'];?>" class="btn btn-sm btn-danger">View</a> 
                         </td>
                         </tr>
                 <?php } }?>

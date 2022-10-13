@@ -196,6 +196,7 @@
                     <th>Quantity</th>
                     <th>Total Weight In Gram</th>
                     <th>Amount</th>
+                    <th style="width:12%;">Remark</th>
                 </tr>
             </thead>
             <tbody class="order-data">
@@ -220,6 +221,7 @@
                     $weight=$out2['weight'];
                     $prate=$out2['rate'];
                     $pamount=$out2['amount'];
+                    $remark=$out2['remark'];
                     $pid=$out2['pid'];
                     $tpid=$out2['tpid'];
 
@@ -251,6 +253,7 @@
                                 <td><?php echo $pqty; ?></td>
                                 <td><?php echo $weight; ?></td>  
                                 <td><?php echo $pamount; ?></td>
+                                <td rowspan="<?php echo $no-1; ?>"><?php echo $remark; ?></td>
                             </tr>
 
                             <?php while($row=mysqli_fetch_array($confirm1))

@@ -20,7 +20,10 @@
 <!-- Viewing Registered Users -->
 <main class="page-content">
     
+    
 <div class="container">
+<a href="online_orderPickuped.php" style="float:right" class="btn btn-sm btn-danger">Pickuped</a></br></br>
+
 <div class="table-responsive" style="overflow-y:scroll; height: 580px; width:100%;">
     <table id="example" class="cell-border" style="width:100%">
             <thead>

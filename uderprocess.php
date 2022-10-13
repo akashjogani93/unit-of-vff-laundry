@@ -11,7 +11,7 @@
 <div class="page-content container-fluid">
     <div class="footer">
         <div class="d-flex justify-content-center">
-             <h2 class="" style=" font-weight: 600">Customer Order Underprocess</h2>
+             <h2 class="" style=" font-weight: 600">Order Underprocess</h2>
         </div>
         <hr style="margin: 0px;">
     </div>
@@ -22,6 +22,9 @@
     
 <div class="container">
 <center><button type="button" class="changeStatus btn btn-sm btn-primary" id="changeStatus">Add To Delevery</button></center>
+<a href="readytoDelivery.php" style="float:right; margin-left:20px;" class="btn btn-sm btn-danger">Asigned</a>
+<a href="byWalking.php" style="float:right;" class="btn btn-sm btn-danger">By Counter</a></br></br>
+
 <div class="table-responsive" style="overflow-y:scroll; height: 580px; width:100%;">
     <table id="example" class="cell-border" style="width:100%">
             <thead>

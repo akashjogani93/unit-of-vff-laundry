@@ -7,9 +7,9 @@
                 <th colspan="2">Particuler </th>
                 <th>Rate</th>
                 <th>Quantity</th>
-                <th style="widht:15%;">Weight In Gram</th>
+                <th style="width:15%;">Weight In Gram</th>
                 <th>Amount</th>
-                <th style="widht:12%;">Remark</th>
+                <th style="width:15%;">Remark</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -103,7 +103,7 @@
 
         <tbody class="mt-5">
             <tr style="background-color: #FDF3F3;">
-                <th colspan="9">
+                <th colspan="10">
                     <div class="row">
                         <div class="m-3 col-3">
                             <label class="form_label" for="company_name">Payment Type</label>

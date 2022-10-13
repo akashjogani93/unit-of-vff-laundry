@@ -41,6 +41,10 @@ include("connect.php");
                         <label class="form_label"></label>
                         <button type="submit" name="search" class="btn btn-sm btn-success col-md-12">Search</button>
                     </div>
+                    <div style="margin-top:10px;" class="group-form col-md-2">
+                        <label class="form_label"></label>
+                        <a href="view_employee.php"  class="btn btn-sm btn-warning col-md-12">Refresh</a>
+                    </div>
                 </div>
             </form>
         <hr />
@@ -73,8 +77,8 @@ include("connect.php");
                                 <td><?php echo $row['adds'] ?></td>
                             <!--  <td><button class="btn btn-sm btn-danger editbutton" type="button">Update</button></td>  -->
                             <td class="text-center">
-                                    <a href="add_employee.php?edit1=<?php echo $row['id']?>"><button class="btn btn-sm btn-danger">View</button> </a>
-                                    <a href="add_employee.php?edit=<?php echo $row['id']?>"><button class="btn btn-sm btn-primary">Edit</button> </a>
+                                    <a href="add_employee.php?edit=<?php echo $row['id']?>"><button class="btn btn-sm btn-danger">View</button> </a>
+                                    <a href="add_employee.php?edit1=<?php echo $row['id']?>"><button class="btn btn-sm btn-primary">Edit</button> </a>
                                     <!-- <a onclick="del(<?php echo $row['id']; ?>)"><button class="btn btn-sm btn-danger deletebutton" type="button">Delete</button></a> -->
                                 </td> 
                             </tr>

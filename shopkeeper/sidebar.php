@@ -98,10 +98,10 @@ h4{
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                <a href="add_cust.php"  id="valid">Add Cust</a>
+                <a href="add_cust.php"  id="valid">Add Customer</a>
                 </li>
                  <li>
-                 <a href="cust_view.php"  id="valid">View Cust</a>
+                 <a href="cust_view.php"  id="valid">View Customer</a>
                 </li>
               </ul>
             </div>
@@ -153,10 +153,10 @@ h4{
                   <a href="uderprocess.php"  id="valid">Underprocess</a>
                 </li>
                 <li>
-                  <a href="readytoDelivery.php"  id="valid">Asign Order</a>
+                  <a href="readytoDelivery.php"  id="valid">Ready To Deliver</a>
                 </li>
                 <li>
-                  <a href="asigned.php"  id="valid">On The Way</a>
+                  <a href="asigned.php"  id="valid">Asigned Order</a>
                 </li>
                 <li>
                   <a href="byWalking.php"  id="valid">By Walking</a>

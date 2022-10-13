@@ -196,6 +196,7 @@
                     <th>Quantity</th>
                     <th>Total Weight In Gram</th>
                     <th>Amount</th>
+                    <th style="width:15%">Remark</th>
                 </tr>
             </thead>
             <tbody class="order-data">
@@ -220,6 +221,7 @@
                     $weight=$out2['weight'];
                     $prate=$out2['rate'];
                     $pamount=$out2['amount'];
+                    $remark=$out2['remark'];
                     $pid=$out2['pid'];
                     $tpid=$out2['tpid'];
 
@@ -251,6 +253,7 @@
                                 <td><?php echo $pqty; ?></td>
                                 <td><?php echo $weight; ?></td>  
                                 <td><?php echo $pamount; ?></td>
+                                <td rowspan="<?php echo $no-1; ?>"><?php echo $remark; ?></td>
                             </tr>
 
                             <?php while($row=mysqli_fetch_array($confirm1))
@@ -277,7 +280,7 @@
                 <tr>
                     <th colspan="6" rowspan="6"></th>
                     <th>Basic Amount</th>
-                    <th>
+                    <th colspan="2">
                         <input type="hidden" id="grossTotal" disabled value="<?php echo $grossTotal; ?>"/>
                         <?php echo $grossAmount; ?>
                     </th>
@@ -295,18 +298,18 @@
                         <h6>Discount <?php echo $discountPer; ?>%
                         </h6>
                     </th>
-                    <th id="discount"><?php echo $discount; ?></th>
+                    <th colspan="2" id="discount"><?php echo $discount; ?></th>
                 </tr>
                         <?php
                     }
                 ?>
                 <tr>
                     <th>CGST 9%</th>
-                    <th id="cgst"><?php echo $gst1; ?></th>
+                    <th colspan="2" sid="cgst"><?php echo $gst1; ?></th>
                 </tr>
                 <tr>
                     <th>SGST 9%</th>
-                    <th id="sgst"><?php echo $gst1; ?></th>
+                    <th colspan="2" id="sgst"><?php echo $gst1; ?></th>
                 </tr>
                 <?php 
                     if($advanceType==0)
@@ -317,11 +320,11 @@
                         ?>
                             <tr>
                                 <th>Advance Paid</th>
-                                <th id="sgst"><?php echo $advanceType; ?></th>
+                                <th colspan="2" id="sgst"><?php echo $advanceType; ?></th>
                             </tr>
                             <tr>
                                 <th>Remaining Amount</th>
-                                <th id="sgst"><?php echo $remainType; ?></th>
+                                <th colspan="2" id="sgst"><?php echo $remainType; ?></th>
                             </tr>
                         <?php
                     }
@@ -332,7 +335,7 @@
                 <tr>
                     <th colspan="6"></th>
                     <th>Total</th>
-                    <th id="billAmt"><?php echo $totAmount; ?></th>
+                    <th colspan="2" id="billAmt"><?php echo $totAmount; ?></th>
                 </tr>
             </thead>
             </table> 

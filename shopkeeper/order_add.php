@@ -24,11 +24,11 @@ body{
     </div>
 </div>
 <?php
-                    $id = $idd = 0;
-                    $sql = "SELECT max(id) FROM cust_detail";
-                    $retval = mysqli_query($conn, $sql );
-                    $row = mysqli_fetch_assoc($retval);
-                    $id = $row['max(id)']+1;
+                    // $id = $idd = 0;
+                    // $sql = "SELECT max(id) FROM cust_detail";
+                    // $retval = mysqli_query($conn, $sql );
+                    // $row = mysqli_fetch_assoc($retval);
+                    // $id = $row['max(id)']+1;
             
                     $sql = "SELECT MAX(`coId`) FROM `couterorder`;";
                     $retval = mysqli_query($conn, $sql );
@@ -766,7 +766,7 @@ function addOrder() {
             remainType : remainType,
         },
         success: function(data) {
-                alert(data);
+                //alert(data);
                 $('#billTable').load('ajaxrequest/billData.php');
                 //window.location.href = "new_order.php";
                 window.location.href="receipt_order.php?view=" + orderId;

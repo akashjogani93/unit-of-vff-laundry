@@ -22,7 +22,122 @@
     
 <div class="container">
     <!-- Button trigger modal -->
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="row mt-2">
+                    <div class="group-form col-md-3">
+                        <label class="form_label" for="company_name">Select Branch</label>
+                        <select class="form-controls form-control-sm" required name="ser" id="ser" onchange="show1()">
+                                <option value="">Select Branch</option> 
+                                    <?php
+                                        $query="SELECT DISTINCT `bid`,`bname` FROM `branch` ORDER BY `bid` ASC";
+                                        $confirm=mysqli_query($conn,$query) or die(mysqli_error());
+                                        while($loca=mysqli_fetch_array($confirm))
+                                    {?>
+                                        <option value="<?php echo $loca['bid']; ?>"><?php echo $loca['bname']; ?></option>
+                                    <?php   
+                                    }   
+                                ?>   
+                        </select>
+                    </div>
+                    <div style="margin-top:10px;" class="group-form col-md-2">
+                        <label class="form_label"></label>
+                        <button type="submit" name="search" class="btn btn-sm btn-success col-md-12">Search</button>
+                        
+                    </div>
+                    <div style="margin-top:10px;" class="group-form col-md-2">
+                        <label class="form_label"></label>
+                        <a href="online_newOrder.php"  class="btn btn-sm btn-warning col-md-12">Refresh</a>
+                    </div>
+                </div>
+            </form>
 
+            </br>
+                                </br>
+
+
+<div id="show">
+<center><button type="button" class=" btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Asign For Pickup</button></center>
+</div>
+<a href="online_orderAsigned.php" style="float:right" class="btn btn-sm btn-danger">For pickup</a></br></br>
+
+
+<script>
+    document.getElementById("show").style.display= "none";
+    function show1()
+    {
+        var asi=$('#ser').val();
+        if(asi==0)
+        {
+                document.getElementById("show").style.display= "none";
+                
+        }
+        else
+        {
+            
+        }
+        
+    }
+</script>
+
+<div class="table-responsive" style="overflow-y:scroll; height: 580px; width:100%;">
+    <table id="example" class="cell-border" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Order ID</th>
+                    <th>Pickup Date</th>
+                    <th>Name</th>
+                    <th>Phone No</th>
+                    <th>Status</th>                   
+                    <th>view Details</th>                   
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                    if(!isset($_POST['search']))
+                    {
+
+                    }
+                    else
+                    {
+                        
+                        $bid=$_POST['ser'];
+                        if($bid==0)
+                        {
+                            
+                        }else
+                        {
+                            ?>
+                                <script>
+                                    document.getElementById("show").style.display= "";
+                                </script>
+                            <?php
+                        }
+                        $qry="SELECT `couterorder`.`coId`,`couterorder`.`pickupDate`,`couterorder`.`deleveryType`,`customer`.`full`,`customer`.`mobile`,`customer`.`cid`,`couterorder`.`status` FROM `couterorder`,`customer` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '10' AND `couterorder`.`deleveryType` = 'Delivery Boy' AND `couterorder`.`bid` = '$bid' ORDER BY `coId` ASC";
+                        $confirm=mysqli_query($conn,$qry);
+                        while($out=mysqli_fetch_array($confirm))
+                        {
+                            if($out['status'] == 10)
+                            {
+                                $status = "Online Order Request";
+                            }
+                        ?>
+                        <tr class="text-center"> 
+                            <td><input type="checkbox" name="asign" value="<?php echo $out['coId']; ?>" class="form-control form-control-sm"></td>
+                            <td><?php echo $out['coId']; ?></td>
+                            <td><?php echo $out['pickupDate']; ?></td>
+                            <td><?php echo $out['full']; ?></td>
+                            <td><?php echo $out['mobile']; ?></td>
+                            <td><?php echo $status; ?></td>
+                            <td class="text-center"><a href="view_online_cust.php?view=<?php echo $out['cid'];?>" class="btn btn-sm btn-primary">View</a> 
+                        </td>
+                        </td>
+                        </tr>
+                <?php } }?>
+            </tbody>
+        </table>
+    </div>
+    
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -37,24 +152,35 @@
                 <form>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select Branch</label>
-                        <select class="form-controls form-control-sm" required name="bid" id="bid" onchange="service1()">
-                            <option value="">Select Branch</option> 
-                                <?php
-                                    $query="SELECT DISTINCT `bid`,`bname` FROM `branch` ORDER BY `bid` ASC";
-                                    $confirm=mysqli_query($conn,$query) or die(mysqli_error());
-                                    while($loca=mysqli_fetch_array($confirm))
-                                {?>
-                                    <option value="<?php echo $loca['bid']; ?>"><?php echo $loca['bname']; ?></option>
-                                <?php   
-                                }   
-                        
-                            ?>   
+                    <select class="form-controls form-control-sm" required name="bid" id="bid" onchange="service1()">
+                                <?php $query1="SELECT `bname` FROM `branch` WHERE `bid`='$bid'";
+                                    $confirm1=mysqli_query($conn,$query1);
+                                    while($out1=mysqli_fetch_array($confirm1))
+                                    {
+                                        $bname=$out1['bname'];
+                                        ?>
+                                        <option value="<?php echo $bid; ?>"><?php echo $bname; ?></option>
+                                        <?php
+                                    }
+                                ?> 
                     </select>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select:</label>
                         <select class="form-controls form-control-sm" required name="delivey" id="delivey">
-                            <option value="">Select</option> 
+                            <option value="">Select</option>
+                            <?php   $sql = "SELECT `id`,`full` FROM `staff` WHERE `bid` = '$bid' AND `des`='Delevery Boy' AND `status`='inactive'";
+                                    $conf=mysqli_query($conn,$sql);
+                                    while($out2=mysqli_fetch_array($conf))
+                                    {
+                                        $full=$out2['full'];
+                                        $id=$out2['id'];
+                                        ?>
+                                        <option value="<?php echo $id; ?>"><?php echo $full; ?></option>
+                                        <?php
+                                    }
+                                ?> 
+                            
                                 
                     </select>
                     </div>
@@ -78,48 +204,6 @@
     </div>
 </div>
 
-
-
-<center><button type="button" class=" btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Asign Order</button></center>
-
-
-
-<div class="table-responsive" style="overflow-y:scroll; height: 580px; width:100%;">
-    <table id="example" class="cell-border" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Order ID</th>
-                    <th>Pickup Date</th>
-                    <th>Name</th>
-                    <th>Phone No</th>
-                    <th>Status</th>                   
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                $qry="SELECT DISTINCT `couterorder`.`coId`,`couterorder`.`pickupDate`,`couterorder`.`deleveryType`,`customer`.`full`,`customer`.`mobile`,`couterorder`.`status`  FROM `couterorder`,`customer` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '10' AND `couterorder`.`deleveryType` = 'Delivery Boy' ORDER BY `coId` ASC";
-                $confirm=mysqli_query($conn,$qry);
-                while($out=mysqli_fetch_array($confirm))
-                {
-                    if($out['status'] == 10)
-                    {
-                        $status = "Online Order Request";
-                    }
-                ?>
-                <tr class="text-center"> 
-                    <td><input type="checkbox" name="asign" value="<?php echo $out['coId']; ?>" class="form-control form-control-sm"></td>
-                    <td><?php echo $out['coId']; ?></td>
-                    <td><?php echo $out['pickupDate']; ?></td>
-                    <td><?php echo $out['full']; ?></td>
-                    <td><?php echo $out['mobile']; ?></td>
-                    <td><?php echo $status; ?></td>
-                   </td>
-                </tr>
-                <?php }?>
-            </tbody>
-        </table>
-    </div>
 </div>
 </main>
 <?php include("footer.php"); ?>

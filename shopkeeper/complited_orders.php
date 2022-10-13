@@ -28,13 +28,14 @@
                     <th>Order ID</th>
                     <th>Name</th>
                     <th>Phone No</th>
-                    <th>Status</th>                   
+                    <th>Status</th>
+                    <th>Order</th>                   
                     <th>Invoice</th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                $qry="SELECT DISTINCT `couterorder`.`coId`,`customer`.`full`,`customer`.`mobile`,`couterorder`.`status`  FROM `couterorder`,`customer` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '4' ORDER BY `coId` ASC";
+                $qry="SELECT DISTINCT `couterorder`.`coId`,`customer`.`full`,`customer`.`mobile`,`couterorder`.`status`,`couterorder`.`orderType` FROM `couterorder`,`customer` WHERE `couterorder`.`cid`=`customer`.`cid` AND `couterorder`.`status` = '4' ORDER BY `coId` ASC";
                 $confirm=mysqli_query($conn,$qry);
                 while($out=mysqli_fetch_array($confirm))
                 {
@@ -48,6 +49,8 @@
                     <td><?php echo $out['full']; ?></td>
                     <td><?php echo $out['mobile']; ?></td>
                     <td><?php echo $status; ?></td>
+                    <td><?php echo $out['orderType']; ?></td>
+
                    <td class="text-center"><a href="complet_invoice.php?invoice=<?php echo $out['coId'];?>" class="btn btn-sm btn-danger">Invoice</a></td>
                 </tr>
                 <?php }?>
@@ -56,7 +59,7 @@
     </div>
 </div>
 </main>
-<?php include("footer.php"); ?>
+<?php include("../footer.php"); ?>
 
 <script>
     $(document).ready(function () {

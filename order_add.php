@@ -149,7 +149,7 @@ body{
     <div class="container">
         <form action="" method="post" enctype="multipart/form-data">
             <center>
-                <h4>Order Summary</h4>
+                <h4>Order Customer Details</h4>
             </center>
             <hr />
             <div style="background-color: #ebf9f7; padding:20px; border:1px solid #ebf9f7;">
@@ -406,14 +406,15 @@ body{
             </div>
 
             <center>
-                <h4>View Order</h4>
+            <h4>Order Summary</h4>
+
             </center>
             <div id="billTable">
 
             </div>
         </div>
 </main>
-
+<?php include('footer.php') ?>
 <script>
 $(document).ready(function() {
     getdata();
@@ -764,7 +765,7 @@ function addOrder() {
             remainType : remainType,
         },
         success: function(data) {
-            alert(data);
+            // alert(data);
             console.log(data);
                 alert("Order Added To New Order");
                 $('#billTable').load('ajaxrequest/billData.php');

@@ -17,7 +17,7 @@ if(isset($_POST['addcust']))
     $gstn=$_POST['gstn'];
     $adds1=$_POST['adds1'];
     $full=$_POST['full'];
-    $query="INSERT INTO `customer`(`cid`,`email`,`mobile`,`hno`,`adds`,`land`,`city`,`state`,`zip`,`full`,`gstn`,`adds1`,`status1`)VALUES('$id','$email','$mobile','$hno','$adds','$land','$city','$state','$zip','$full','$gstn','$adds1','Inactive');";
+    $query="INSERT INTO `customer`(`cid`,`email`,`mobile`,`hno`,`adds`,`land`,`city`,`state`,`zip`,`full`,`gstn`,`adds1`)VALUES('$id','$email','$mobile','$hno','$adds','$land','$city','$state','$zip','$full','$gstn','$adds1');";
     $confirm = mysqli_query($conn,$query) or die(mysqli_error());
     if($confirm)
     {

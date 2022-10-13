@@ -25,6 +25,7 @@ $_SESSION['bid']=$bid;
     
 <div class="container">
     <!-- Button trigger modal -->
+    <a href="asigned.php" style="float:right" class="btn btn-sm btn-danger">Asigned</a></br></br>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

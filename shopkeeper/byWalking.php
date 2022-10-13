@@ -27,6 +27,8 @@ $_SESSION['bid']=$bid;
 <div class="container">
     
 <?php //echo date('d-m-Y');?>
+<a href="complited_orders.php" style="float:right" class="btn btn-sm btn-danger">Complited</a></br></br>
+
 <div class="table-responsive" style="overflow-y:scroll; height: 580px; width:100%;">
     <table id="example" class="cell-border" style="width:100%">
             <thead>
