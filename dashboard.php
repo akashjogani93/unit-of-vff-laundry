@@ -3,6 +3,7 @@
 
 
 <?php include("sidebar.php");
+
  ?>
 <div class="page-content container-fluid">
     <div class="footer">

@@ -51,11 +51,51 @@ $remainType = $_POST['remainType'];
         $qry7="TRUNCATE `tempproduct`;";
         $cfm7 = mysqli_query($conn,$qry7);
 
+
         $qry8="SELECT `email` FROM `customer` WHERE `cid` = '$customerId';";
-        $cfm8 = mysqli_query($conn,$qry8);
-        $email = mysqli_fetch_array($cfm8);
+        $exc=mysqli_query($conn,$qry8);
+        while($row=mysqli_fetch_array($exc))
+        {
+            $to=$row['email'];
+            $subject = 'VFF Laundry';
+            //$msg = "Hello Your Laundry Order @UNIT OF VFF-GROUP is '$billAmount'";         
+            $msg = "<p>Your order id '$orderId ' and the bill Amount is ' $billAmount '.</p>";
+
+            include('../../smtp/PHPMailerAutoload.php');
+            $html='Msg';
+            
+                $mail = new PHPMailer(); 
+                $mail->SMTPDebug  = 3;
+                $mail->IsSMTP(); 
+                $mail->SMTPAuth = true; 
+                $mail->SMTPSecure = 'tls'; 
+                $mail->Host = "mail.vff-group.com";
+                $mail->Port = 587; 
+                $mail->IsHTML(true);
+                $mail->CharSet = 'UTF-8';
+                $mail->Username = "information@vff-group.com";
+                $mail->Password = "vff123";
+                $mail->SetFrom("information@vff-group.com");
+                $mail->Subject = $subject;
+                $mail->Body =$msg;
+                $mail->AddAddress($to);
+                $mail->SMTPOptions=array('ssl'=>array(
+                    'verify_peer'=>false,
+                    'verify_peer_name'=>false,
+                    'allow_self_signed'=>false
+                ));
+                if(!$mail->Send()){
+                    echo $mail->ErrorInfo;
+                }else{
+                    return 'Sent';
+                }
+                echo $mail;
+        }
+
         
-      
+        
+        
+                                
 
         // $subject = "About Order Bill";
 		// $message = "<p>Your order id id '$orderId' and the bill Amount is '$billAmount'.</p>";

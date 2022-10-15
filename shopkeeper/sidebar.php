@@ -3,6 +3,15 @@ include('../link.php');
 include('../connect.php');
 
     session_start();
+    if(!isset($_SESSION['Is_Login']))
+      {
+          header('location:../index.php');
+          die();
+      }
+      else
+      {
+
+      }
     $id=$_SESSION["id"];
     $type=$_SESSION["type"];
     //echo $id;
@@ -203,7 +212,7 @@ h4{
   
           
            <li>
-            <a href="../index.php">
+            <a href="logout.php">
               <i class="fa fa-power-off"></i>
               <span>Logout</span>
             </a>

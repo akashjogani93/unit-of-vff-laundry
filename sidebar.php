@@ -1,6 +1,16 @@
 <?php 
 include('link.php');
 include('connect.php');
+session_start();
+if(!isset($_SESSION['Is_Login']))
+{
+    header('location:index.php');
+    die();
+}
+else
+{
+
+}
 ?>
 <style>
   .sidebar-headers{

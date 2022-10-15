@@ -98,8 +98,8 @@
             
             ?>
         <form>   
-            <div class="card container" >
-               <div class="card-body">            
+            <div class="card container" style="margin-top:0;">
+               <div class="card-body" style="margin:0; padding:0;">            
                         <div class="panel-heading">                    
                             <div class="panel-title">
                                 <?php
@@ -187,11 +187,11 @@
 
 
 
-            <table id="example" class="table table-bordered cell-border mb-5">
+            <table id="example" class="table table-bordered cell-border mb-5" style="border:1px solid black; margin-top:0; padding-top:0">
             <thead>
                 <tr>
                     <th colspan="2"></th>
-                    <th colspan="2">Perticuler </th>
+                    <th colspan="2">Particuler </th>
                     <th>Rate</th>
                     <th>Quantity</th>
                     <th>Total Weight In Gram</th>
@@ -244,7 +244,7 @@
                             <tr>
                                 <th rowspan="<?php echo $no; ?>"><?php echo $sn; ?>.</th>
                                 <th>Service</th>
-                                <th colspan="5"><?php echo $services." ( ".$punit." Wise )"; ?></th>
+                                <th colspan="7"><?php echo $services." ( ".$punit." Wise )"; ?></th>
                             </tr>
                             <tr>
                                 <th>Product</th>

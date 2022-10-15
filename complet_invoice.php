@@ -70,7 +70,7 @@
     {
         
         $CoId=$_GET['invoice'];
-        //echo $CoId;
+        echo $CoId;
         $qry1="SELECT `couterorder`.*,`invoice`.* FROM `couterorder`,`invoice` WHERE `couterorder`.`coId`='$CoId' AND `invoice`.`coId`='$CoId'";
         $confirm=mysqli_query($conn,$qry1);
         while($out=mysqli_fetch_array($confirm))

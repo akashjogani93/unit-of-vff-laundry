@@ -122,9 +122,12 @@ element.style {
 		$pass=$_POST['password'];
 		$query="SELECT * FROM `login` WHERE `username`='$user' AND `password`='$pass';";
 		$confirm=mysqli_query($conn,$query) or die(mysqli_error());
+
 		$result=mysqli_num_rows($confirm);
+
 		if($result!=0)
 		{   
+            $_SESSION['Is_Login']=true;
             $out=mysqli_fetch_array($confirm);
             
             $id=$out['id'];
@@ -137,7 +140,7 @@ element.style {
             
             if($type=="admin")
             {
-                $_SESSION['Is_Login']=true;
+                
                 echo "<script>window.location='dashboard.php';</script>";
             }
             else
