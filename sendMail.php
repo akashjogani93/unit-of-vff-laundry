@@ -35,7 +35,7 @@
 
 <?php
 
-// $to='swatizende038@gmail.com';
+// $to='akashjogani93@gmail.com';
 // $subject = "About Order Bill";
 //  $msg = "<p>Your order id id and the bill Amount is.</p>";        
 // include('smtp/PHPMailerAutoload.php');
@@ -55,6 +55,7 @@
 // 	$mail->SetFrom("information@vff-group.com");
 // 	$mail->Subject = $subject;
 // 	$mail->Body =$msg;
+// 	$mail->addAttachment('ws-commands.pdf',"commands");
 // 	$mail->AddAddress($to);
 // 	$mail->SMTPOptions=array('ssl'=>array(
 // 		'verify_peer'=>false,
@@ -68,3 +69,44 @@
 // }
 ?>
 
+
+<?php
+
+$fields = array(
+    "sender_id" =>"Jvfbgm",
+	"username" =>"evonit304",
+	"password" =>"evonit12",
+	"droute" => "3",
+	"template_id" =>"1207162952378871384",
+    "message" => "This is a test message",
+    "numbers" => "9742020863",
+);
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://dlt.fastsmsindia.com/messages/sendSmsApi",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_SSL_VERIFYHOST => 0,
+  CURLOPT_SSL_VERIFYPEER => 0,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => json_encode($fields),
+  CURLOPT_HTTPHEADER => array(
+    "intity_id: 120116282324559736",
+    "accept: */*",
+    "cache-control: no-cache",
+    "content-type: application/json"
+  ),
+));
+
+
+?>
+
+<?php   
+
+
+?>

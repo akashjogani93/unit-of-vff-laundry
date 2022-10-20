@@ -74,10 +74,8 @@ include("connect.php");
 <!-- sidebar-wrapper  -->
 <main class="page-content">
     <div class="container">
-        <form action="branch_submit.php" method="post" id="form1" enctype="multipart/form-data">
-            
+        <form action="branch_submit.php" method="post" id="form1" enctype="multipart/form-data">    
             <div class="row mt-4">
-               
                 <div class="group-form col-md-4">
                     <label class="form_label" for="company_name">Branch Id</label>
                     <input type="text" class="form-control form-control-sm" value="<?php echo $bid; ?>" name="bid" id="bid" placeholder="" readonly>
@@ -85,12 +83,10 @@ include("connect.php");
                 <div class="group-form col-md-4">
                     <label class="form_label" for="company_name">Branch Name</label>
                     <input type="text" name="bname" class="form-control form-control-sm" value="<?php echo $bname; ?>" placeholder="Add Branch" required>
-
                 </div>
                 <div class="group-form col-md-4">
                     <label class="form_label" for="company_name">Address</label>
                     <input type="text" name="adds" class="form-control form-control-sm" value="<?php echo $adds; ?>" placeholder="Add A Main Address" required>
-
                 </div>
             </div>
             <div class="row mt-2">
@@ -137,7 +133,7 @@ include("connect.php");
         </div>
         
             <div class="table-responsive" style="overflow-y:scroll; height: 360px; width:80% margin-left: 100px;">
-            <table id="example" class="cell-border" style="width:100%">
+            <table id="example" class="cell-border" cellspacing="0" style="width:100%">
                 <thead>
                     <tr>
                         <th class="ss">S.no</th>
@@ -197,5 +193,6 @@ include("connect.php");
 <script>
     $(document).ready(function () {
     $('#example').DataTable();
+    
 });
 </script>

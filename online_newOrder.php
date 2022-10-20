@@ -89,7 +89,7 @@
                     <th>Name</th>
                     <th>Phone No</th>
                     <th>Status</th>                   
-                    <th>view Details</th>                   
+                    <!-- <th>view Details</th>                    -->
                 </tr>
             </thead>
             <tbody>
@@ -129,7 +129,7 @@
                             <td><?php echo $out['full']; ?></td>
                             <td><?php echo $out['mobile']; ?></td>
                             <td><?php echo $status; ?></td>
-                            <td class="text-center"><a href="view_online_cust.php?view=<?php echo $out['cid'];?>" class="btn btn-sm btn-primary">View</a> 
+                            <!-- <td class="text-center"><a href="view_online_cust.php?view=<?php echo $out['cid'];?>" class="btn btn-sm btn-primary">View</a>  -->
                         </td>
                         </td>
                         </tr>
